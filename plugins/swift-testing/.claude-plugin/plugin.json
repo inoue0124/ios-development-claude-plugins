@@ -3,5 +3,8 @@
   "version": "0.1.0",
   "description": "ユニットテスト・UI テストの生成からテスト実行・カバレッジ分析まで、テストのライフサイクル全体をサポートする",
   "skills": "./skills/",
-  "agents": "./agents/"
+  "agents": [
+    "./agents/coverage-reporter.md",
+    "./agents/test-runner.md"
+  ]
 }
