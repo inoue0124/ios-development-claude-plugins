@@ -32,6 +32,7 @@ iOS チーム開発を包括的にサポートする Claude Code プラグイン
 | 7 | [ios-onboarding](plugins/ios-onboarding/) | プロジェクト構造解説・用語集生成・変更要約 |
 | 8 | [feature-module-gen](plugins/feature-module-gen/) | SwiftUI + MVVM Feature Module 雛形一式生成 |
 | 9 | [ios-distribution](plugins/ios-distribution/) | アーカイブビルド・TestFlight アップロード自動化 |
+| 10 | [feature-implementation](plugins/feature-implementation/) | 要件定義・詳細設計・タスクリストによるスペック駆動フィーチャー実装 |
 
 各プラグインの詳細（スキル一覧・subagent・hooks）は各ディレクトリの README.md を参照。
 
@@ -55,6 +56,7 @@ iOS チーム開発を包括的にサポートする Claude Code プラグイン
 /plugin install ios-onboarding
 /plugin install feature-module-gen
 /plugin install ios-distribution
+/plugin install feature-implementation
 ```
 
 ### 推奨 MCP サーバー
