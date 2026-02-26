@@ -1,0 +1,17 @@
+{
+  "name": "swift-testing",
+  "version": "0.1.0",
+  "description": "ユニットテスト・UI テストの生成からテスト実行・カバレッジ分析まで、テストのライフサイクル全体をサポートする",
+  "skills": [
+    "skills/unit-test-gen",
+    "skills/ui-test-gen",
+    "skills/mock-gen",
+    "skills/test-pattern-suggest",
+    "skills/coverage-gap-detect",
+    "skills/test-gen"
+  ],
+  "agents": [
+    "agents/test-runner.md",
+    "agents/coverage-reporter.md"
+  ]
+}
