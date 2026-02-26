@@ -2,7 +2,6 @@
 name: self-review
 description: PR 前のセルフレビューを実施する
 argument-hint: "[plugin-name]"
-disable-model-invocation: true
 ---
 
 # セルフレビュー

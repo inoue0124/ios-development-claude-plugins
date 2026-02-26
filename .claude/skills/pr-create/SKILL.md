@@ -1,7 +1,6 @@
 ---
 name: pr-create
 description: プラグイン実装の PR を作成する
-disable-model-invocation: true
 ---
 
 # PR 作成

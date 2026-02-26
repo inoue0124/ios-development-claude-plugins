@@ -2,7 +2,6 @@
 name: validate-plugin
 description: プラグインの構造が CLAUDE.md のルールに準拠しているか検証する
 argument-hint: "[plugin-name]"
-disable-model-invocation: true
 ---
 
 # プラグイン構造検証
