@@ -18,6 +18,7 @@ model: sonnet
 - ファイルパスからレイヤー（View / ViewModel / Model / Repository / UseCase）を推定する
 - レイヤー間の依存方向違反を検出する
 - 循環依存を検出する
+- Concurrency の全体傾向を収集する（`@MainActor` / `actor` / `Sendable` / `nonisolated(unsafe)` の使用状況）
 - モジュール依存マップをテキストで生成する
 
 ### やらないこと
@@ -34,6 +35,7 @@ model: sonnet
 4. ディレクトリ名からレイヤーを推定できないファイルは「Other」に分類しスキップする
 5. 依存方向のルール違反（下位→上位）を検出する
 6. グラフの循環を検出する
+7. Grep で `@MainActor`, `actor `, `Sendable`, `nonisolated(unsafe)`, `@unchecked Sendable` の使用箇所を集計する
 
 ## 除外対象
 
@@ -60,6 +62,13 @@ ViewModel層: N ファイル
 
 ### 循環依存: N 件
 - <モジュールA> ↔ <モジュールB>
+
+### Concurrency 概況
+- @MainActor: N 箇所
+- actor 定義: N 箇所
+- Sendable 準拠: N 箇所
+- @unchecked Sendable: N 箇所（要確認）
+- nonisolated(unsafe): N 箇所（要確認）
 
 ### 統計
 - 総ファイル数: N
