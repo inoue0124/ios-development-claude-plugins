@@ -2,16 +2,6 @@
   "name": "swift-code-quality",
   "version": "0.1.0",
   "description": "SwiftLint / SwiftFormat による静的解析と軽量な構文チェックで、フルビルドなしにコード品質を担保する",
-  "skills": [
-    "skills/swift-lint",
-    "skills/swift-format",
-    "skills/syntax-typecheck",
-    "skills/complexity-analysis",
-    "skills/dead-code-detect",
-    "skills/type-safety-check",
-    "skills/quality-check"
-  ],
-  "agents": [
-    "agents/lint-scanner.md"
-  ]
+  "skills": "./skills/",
+  "agents": "./agents/"
 }

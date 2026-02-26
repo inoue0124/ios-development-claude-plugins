@@ -2,13 +2,6 @@
   "name": "feature-implementation",
   "version": "0.1.0",
   "description": "要件定義書・詳細設計書・タスクリストを先に作成し、スペック駆動でフィーチャーを実装する",
-  "skills": [
-    "skills/requirements-gen",
-    "skills/design-gen",
-    "skills/task-gen",
-    "skills/implement-feature"
-  ],
-  "agents": [
-    "agents/codebase-scanner.md"
-  ]
+  "skills": "./skills/",
+  "agents": "./agents/"
 }

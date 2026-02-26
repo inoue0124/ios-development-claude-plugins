@@ -2,15 +2,6 @@
   "name": "ios-architecture",
   "version": "0.1.0",
   "description": "MVVM パターンの構造チェック・レイヤー間の依存方向検査・DI パターンの提案を行う",
-  "skills": [
-    "skills/mvvm-check",
-    "skills/layer-dependency-check",
-    "skills/di-pattern-suggest",
-    "skills/protocol-oriented-check",
-    "skills/concurrency-check",
-    "skills/arch-audit"
-  ],
-  "agents": [
-    "agents/architecture-scanner.md"
-  ]
+  "skills": "./skills/",
+  "agents": "./agents/"
 }

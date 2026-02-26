@@ -2,18 +2,7 @@
   "name": "team-conventions",
   "version": "0.1.0",
   "description": "チームのコーディング規約・命名規則・ブランチ運用ルールを自動で検査・強制する",
-  "skills": [
-    "skills/naming-check",
-    "skills/file-structure-check",
-    "skills/commit-message-lint",
-    "skills/branch-naming-check",
-    "skills/pr-description-gen",
-    "skills/convention-check"
-  ],
-  "agents": [
-    "agents/convention-scanner.md"
-  ],
-  "hooks": [
-    "hooks/hooks.json"
-  ]
+  "skills": "./skills/",
+  "agents": "./agents/",
+  "hooks": "./hooks/hooks.json"
 }
