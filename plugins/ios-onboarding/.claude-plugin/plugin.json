@@ -1,0 +1,16 @@
+{
+  "name": "ios-onboarding",
+  "version": "0.1.0",
+  "description": "プロジェクト構造の自動解説・用語集生成・最近の変更要約で、新メンバーの立ち上がりを加速する",
+  "skills": [
+    "skills/codebase-overview",
+    "skills/module-guide",
+    "skills/architecture-map",
+    "skills/glossary-gen",
+    "skills/recent-changes-summary",
+    "skills/onboard"
+  ],
+  "agents": [
+    "agents/codebase-analyzer.md"
+  ]
+}
