@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "description": "チームのコーディング規約・命名規則・ブランチ運用ルールを自動で検査・強制する",
   "skills": "./skills/",
-  "agents": "./agents/",
+  "agents": [
+    "./agents/convention-scanner.md"
+  ],
   "hooks": "./hooks/hooks.json"
 }

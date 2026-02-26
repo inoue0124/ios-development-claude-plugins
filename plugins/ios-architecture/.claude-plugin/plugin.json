@@ -3,5 +3,7 @@
   "version": "0.1.0",
   "description": "MVVM パターンの構造チェック・レイヤー間の依存方向検査・DI パターンの提案を行う",
   "skills": "./skills/",
-  "agents": "./agents/"
+  "agents": [
+    "./agents/architecture-scanner.md"
+  ]
 }

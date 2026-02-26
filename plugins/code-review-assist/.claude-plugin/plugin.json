@@ -3,5 +3,7 @@
   "version": "0.1.0",
   "description": "PR の差分を分析し、レビューコメントの生成・アーキテクチャ適合チェック・影響範囲の特定を行う",
   "skills": "./skills/",
-  "agents": "./agents/"
+  "agents": [
+    "./agents/review-analyzer.md"
+  ]
 }

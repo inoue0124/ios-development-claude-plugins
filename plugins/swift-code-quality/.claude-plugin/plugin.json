@@ -3,5 +3,7 @@
   "version": "0.1.0",
   "description": "SwiftLint / SwiftFormat による静的解析と軽量な構文チェックで、フルビルドなしにコード品質を担保する",
   "skills": "./skills/",
-  "agents": "./agents/"
+  "agents": [
+    "./agents/lint-scanner.md"
+  ]
 }
