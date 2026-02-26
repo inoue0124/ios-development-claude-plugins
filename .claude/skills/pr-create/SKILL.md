@@ -2,7 +2,6 @@
 name: pr-create
 description: プラグイン実装の PR を作成する
 disable-model-invocation: true
-allowed-tools: Read, Glob, Grep, Bash(git *), Bash(gh pr *), Bash(gh issue *)
 ---
 
 # PR 作成

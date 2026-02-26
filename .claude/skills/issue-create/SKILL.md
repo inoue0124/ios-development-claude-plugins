@@ -3,7 +3,6 @@ name: issue-create
 description: プラグイン開発用の Issue を作成する
 argument-hint: "[plugin-name]"
 disable-model-invocation: true
-allowed-tools: Read, Glob, Grep, Bash(gh issue *)
 ---
 
 # Issue 作成
