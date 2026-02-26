@@ -1,0 +1,92 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ios-claude-plugins",
+  "version": "1.0.0",
+  "description": "iOS チーム開発を包括的にサポートする Claude Code プラグインストア — コードレビュー、規約統一、テスト、スペック駆動開発",
+  "owner": {
+    "name": "inoue0124",
+    "email": ""
+  },
+  "plugins": [
+    {
+      "name": "ios-architecture",
+      "description": "MVVM 構造チェック・レイヤー依存検査・DI 提案",
+      "version": "0.1.0",
+      "source": "./plugins/ios-architecture",
+      "category": "development",
+      "tags": ["ios", "swift", "swiftui", "mvvm", "architecture", "di"]
+    },
+    {
+      "name": "team-conventions",
+      "description": "チームのコーディング規約・命名規則・ブランチ運用ルールを自動で検査・強制する",
+      "version": "0.1.0",
+      "source": "./plugins/team-conventions",
+      "category": "development",
+      "tags": ["ios", "swift", "conventions", "naming", "lint", "commit"]
+    },
+    {
+      "name": "swift-code-quality",
+      "description": "SwiftLint / SwiftFormat による静的解析・自動修正・構文チェック",
+      "version": "0.1.0",
+      "source": "./plugins/swift-code-quality",
+      "category": "development",
+      "tags": ["ios", "swift", "swiftlint", "swiftformat", "lint", "quality"]
+    },
+    {
+      "name": "swift-testing",
+      "description": "Swift Testing フレームワークでのテスト生成・実行・カバレッジ分析",
+      "version": "0.1.0",
+      "source": "./plugins/swift-testing",
+      "category": "development",
+      "tags": ["ios", "swift", "testing", "unit-test", "coverage", "swift-testing"]
+    },
+    {
+      "name": "github-workflow",
+      "description": "構造化 Issue 作成・差分解析 PR 作成",
+      "version": "0.1.0",
+      "source": "./plugins/github-workflow",
+      "category": "workflow",
+      "tags": ["github", "issue", "pull-request", "workflow", "automation"]
+    },
+    {
+      "name": "code-review-assist",
+      "description": "PR 差分分析・レビューコメント生成・アーキテクチャ適合チェック・影響範囲特定",
+      "version": "0.1.0",
+      "source": "./plugins/code-review-assist",
+      "category": "development",
+      "tags": ["ios", "swift", "code-review", "pr", "quality", "architecture"]
+    },
+    {
+      "name": "ios-onboarding",
+      "description": "プロジェクト構造解説・用語集生成・変更要約",
+      "version": "0.1.0",
+      "source": "./plugins/ios-onboarding",
+      "category": "development",
+      "tags": ["ios", "onboarding", "documentation", "glossary"]
+    },
+    {
+      "name": "feature-module-gen",
+      "description": "SwiftUI + MVVM Feature Module 雛形一式生成・SPM パッケージ組み込み",
+      "version": "0.1.0",
+      "source": "./plugins/feature-module-gen",
+      "category": "development",
+      "tags": ["ios", "swift", "swiftui", "mvvm", "module", "scaffold", "spm"]
+    },
+    {
+      "name": "ios-distribution",
+      "description": "アーカイブビルド・TestFlight アップロード自動化",
+      "version": "0.1.0",
+      "source": "./plugins/ios-distribution",
+      "category": "workflow",
+      "tags": ["ios", "distribution", "testflight", "archive", "release"]
+    },
+    {
+      "name": "feature-implementation",
+      "description": "要件定義書・詳細設計書・タスクリストを先に作成し、スペック駆動でフィーチャーを実装する",
+      "version": "0.1.0",
+      "source": "./plugins/feature-implementation",
+      "category": "development",
+      "tags": ["ios", "swift", "spec-driven", "requirements", "design", "task", "workflow"]
+    }
+  ]
+}
