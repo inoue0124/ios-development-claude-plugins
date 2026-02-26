@@ -1,0 +1,16 @@
+{
+  "name": "feature-module-gen",
+  "version": "0.1.0",
+  "description": "SwiftUI + MVVM の Feature Module 雛形を一式生成し、SPM パッケージへの組み込みまで行う",
+  "skills": [
+    "skills/feature-scaffold",
+    "skills/view-gen",
+    "skills/viewmodel-gen",
+    "skills/repository-gen",
+    "skills/usecase-gen",
+    "skills/new-feature"
+  ],
+  "agents": [
+    "agents/module-generator.md"
+  ]
+}
