@@ -23,13 +23,13 @@ plugins/<plugin-name>/
   "name": "<plugin-name>",
   "version": "0.1.0",
   "description": "<日本語の説明>",
-  "skills": ["skills/<skill-name>"],
-  "agents": ["agents/<agent-name>.md"],
-  "hooks": ["hooks/hooks.json"]
+  "skills": "./skills/",
+  "agents": ["./agents/<agent-name>.md"],
+  "hooks": ["./hooks/hooks.json"]
 }
 ```
 
-- skills, agents, hooks は実際に存在するもののみ列挙する
+- skills, agents, hooks は実際に存在するもののみ記載する（存在しないフィールドは省略する）
 - description は README.md のプラグイン説明文を使う
 
 ## SKILL.md
