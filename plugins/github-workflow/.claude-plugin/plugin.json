@@ -1,0 +1,12 @@
+{
+  "name": "github-workflow",
+  "version": "0.1.0",
+  "description": "構造化された issue 作成と、差分解析に基づく PR 作成でチームのタスク管理を標準化する",
+  "skills": [
+    "skills/issue-create",
+    "skills/issue-triage",
+    "skills/pr-create",
+    "skills/pr-checklist",
+    "skills/pr-link-issues"
+  ]
+}
