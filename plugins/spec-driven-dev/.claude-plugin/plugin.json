@@ -1,0 +1,6 @@
+{
+  "name": "spec-driven-dev",
+  "version": "0.1.0",
+  "description": "スペック駆動開発ワークフロー — PRD・機能設計・アーキテクチャ・リポジトリ構造・開発ガイドライン・用語集を段階的に生成する",
+  "skills": "./skills/"
+}

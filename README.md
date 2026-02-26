@@ -14,6 +14,12 @@ iOS チーム開発を包括的にサポートする Claude Code プラグイン
 
 ## プラグイン一覧
 
+### Tier 0: プロジェクト立ち上げ時に最初だけ使うもの
+
+| # | プラグイン | 概要 |
+|---|---|---|
+| 1 | [spec-driven-dev](plugins/spec-driven-dev/) | スペック駆動開発ワークフロー — PRD・機能設計・アーキテクチャ・リポジトリ構造・開発ガイドライン・用語集を段階的に生成 |
+
 ### Tier 1: 日常の開発サイクルで毎日使うもの
 
 | # | プラグイン | 概要 |
@@ -47,6 +53,7 @@ iOS チーム開発を包括的にサポートする Claude Code プラグイン
 ### 個別プラグインのインストール
 
 ```bash
+/plugin install spec-driven-dev
 /plugin install ios-architecture
 /plugin install team-conventions
 /plugin install swift-code-quality
