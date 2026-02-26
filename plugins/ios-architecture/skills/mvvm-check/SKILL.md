@@ -1,11 +1,16 @@
 ---
 name: mvvm-check
-description: SwiftUI の MVVM パターン準拠を検査する。View、ViewModel、Model の分離、責務の混在、ビジネスロジックの配置を検出。「MVVM」「View」「ViewModel」「設計」「アーキテクチャ」で自動適用。
+description: SwiftUI の MVVM パターン準拠を検査する。View と ViewModel の分離、責務の混在、ビジネスロジックの配置を検出。「MVVM 準拠」「ViewModel 分離」「ビジネスロジック混在」「ObservableObject」で自動適用。
 ---
 
 # MVVM パターン検査
 
 指定されたファイルまたは変更差分に対し、SwiftUI + MVVM の分離が正しく行われているかを検査する。
+
+## ツール使用方針
+
+- ファイル読み取りは xcodeproj-mcp-server の利用を優先する
+- MCP が利用できない場合は Read / Grep ツールで直接ファイルを読み取る
 
 ## 検査項目
 

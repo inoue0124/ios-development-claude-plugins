@@ -1,11 +1,16 @@
 ---
 name: protocol-oriented-check
-description: Protocol 指向設計の推奨・改善提案を行う。Protocol 準拠、デフォルト実装、型消去、Protocol 分離の原則を検査。「Protocol」「インターフェース」「抽象化」「設計原則」で自動適用。
+description: Protocol 指向設計の推奨・改善提案を行う。Protocol 準拠、デフォルト実装、型消去、Protocol 分離の原則を検査。「Protocol 分離」「ISP」「associatedtype」「型消去」「any/some」で自動適用。
 ---
 
 # Protocol 指向設計チェック
 
 Swift の Protocol 指向プログラミングの観点からコードを分析し、改善提案を行う。
+
+## ツール使用方針
+
+- ファイル読み取りは xcodeproj-mcp-server の利用を優先する
+- MCP が利用できない場合は Read / Grep ツールで直接ファイルを読み取る
 
 ## 検査項目
 

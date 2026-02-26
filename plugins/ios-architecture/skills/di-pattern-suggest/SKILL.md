@@ -1,11 +1,16 @@
 ---
 name: di-pattern-suggest
-description: Dependency Injection パターンの提案を行う。コンストラクタ注入、Protocol による抽象化、DI コンテナの設計を支援。「DI」「依存注入」「初期化」「テスタビリティ」で自動適用。
+description: Dependency Injection パターンの提案を行う。コンストラクタ注入、Protocol による抽象化、DI コンテナの設計を支援。「DI」「依存注入」「テスタビリティ」「モック差し替え」で自動適用。
 ---
 
 # DI パターン提案
 
 指定されたコードに対し、適切な Dependency Injection パターンを提案する。
+
+## ツール使用方針
+
+- ファイル読み取りは xcodeproj-mcp-server の利用を優先する
+- MCP が利用できない場合は Read / Grep ツールで直接ファイルを読み取る
 
 ## 検出と提案
 
@@ -52,7 +57,13 @@ class UserViewModel: ObservableObject {
 - <行番号>: <型名> を直接インスタンス化しています
 
 ### 推奨パターン
-- コンストラクタ注入 + Protocol 抽象化の適用例を提示
+- [<行番号>] <型名> に対するコンストラクタ注入 + Protocol 抽象化:
+  修正前:
+    private let repository = UserRepository()
+  修正後:
+    private let repository: UserRepositoryProtocol
+    init(repository: UserRepositoryProtocol) { ... }
 
 ### テスタビリティ評価: 高 / 中 / 低
+- 評価理由の説明
 ```
