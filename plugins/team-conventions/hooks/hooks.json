@@ -1,0 +1,7 @@
+[
+  {
+    "event": "UserPromptSubmit",
+    "script": "hooks/inject-conventions.sh",
+    "description": "コード生成時にチームの規約をコンテキストとして注入する"
+  }
+]
