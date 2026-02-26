@@ -53,6 +53,15 @@ plugin-name/
 - 複数スキルを組み合わせるワークフロー → `true`。ユーザーが `/skill-name` で明示的に実行
 - 外部に副作用がある操作（issue 作成、PR 作成、アップロード等） → `true`
 
+### Swift バージョン準拠
+
+スキル・subagent 内のコード例・検査ルールは常に最新の Swift に準拠する。
+
+- **Swift 6.2 / SwiftUI** を前提とする
+- Observation フレームワーク（`@Observable`）を使用する。`ObservableObject` / `@Published` は非推奨として検出・移行提案する
+- Swift Concurrency の厳格な並行性モデル（`Sendable`, actor 分離, structured concurrency）に準拠する
+- 旧 API パターン（`@StateObject`, `@ObservedObject`, `@EnvironmentObject`）はレガシーとして扱い、新 API（`@State`, `@Bindable`, `@Environment`）への移行を促す
+
 ## ガイドライン
 
 ### 命名規則
