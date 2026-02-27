@@ -10,6 +10,7 @@
 | skill | design-gen | 詳細設計書の生成（MVVM 設計・モジュール構成・API 設計） |
 | skill | task-gen | 詳細設計書からタスクリストを生成 |
 | skill (manual) | implement-feature | 仕様策定 → 承認 → タスク実装の一気通貫ワークフロー |
+| skill (manual) | issue-implement | GitHub issue を起点にブランチ作成・規模判断・実装・PR 作成 |
 
 ## subagent
 

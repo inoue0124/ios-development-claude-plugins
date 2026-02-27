@@ -1,7 +1,8 @@
 ---
 name: issue-implement
-description: GitHub issue を起点にブランチ作成・実装・PR 作成までを一気通貫で行う。issue 番号を指定して実行する。「issue 実装」「issue 対応」「issue-implement」で起動。
+description: GitHub issue 番号を指定して、ブランチ作成・実装・PR 作成を一気通貫で実行する。issue の規模を自動判断し、小規模は直接実装、大規模はスペック駆動で実装する。「issue 実装」「issue 対応」「issue-implement」で起動。
 disable-model-invocation: true
+argument-hint: "<issue-number>"
 ---
 
 # Issue 起点の実装ワークフロー
@@ -34,8 +35,8 @@ issue の内容から実装規模を判断する。
 
 | 規模 | 条件 | フロー |
 |---|---|---|
-| 小規模 | バグ修正、設定変更、1-2 ファイルの修正 | → Step 3 → Step 5 → Step 7 |
-| 大規模 | 新機能追加、複数モジュールにまたがる変更 | → Step 3 → Step 4 → Step 5 → Step 6 → Step 7 |
+| 小規模 | バグ修正、設定変更、1-2 ファイルの修正 | → Step 3 → Step 4 → Step 6 → Step 8 |
+| 大規模 | 新機能追加、複数モジュールにまたがる変更 | → Step 3 → Step 4 → Step 5 → Step 6 → Step 7 → Step 8 |
 
 判断基準:
 - ラベルに `bug` がある → 小規模（原則）
@@ -45,7 +46,22 @@ issue の内容から実装規模を判断する。
 
 **ユーザーに規模判断の結果を提示し、承認を得る。**
 
-### Step 3: ブランチ作成
+### Step 3: プロジェクトスペック参照
+
+`docs/` 配下にプロジェクトスペック（`/init-project-spec` で生成）が存在する場合、以下を読み取り設計・実装の前提情報として活用する。
+
+| ファイル | 参照内容 |
+|---|---|
+| `docs/product-requirements.md` | ユーザーストーリー・機能要件・非機能要件 |
+| `docs/functional-design.md` | 画面一覧・データモデル・API 仕様 |
+| `docs/architecture.md` | レイヤー設計・DI 戦略・ナビゲーション設計・テスト戦略 |
+| `docs/repository-structure.md` | ディレクトリ構成・ファイル命名規則 |
+| `docs/development-guidelines.md` | 実装パターン・禁止パターン・コーディング規約 |
+| `docs/glossary.md` | ドメイン用語 → コード命名のマッピング |
+
+存在しないファイルはスキップする（警告は出さない）。
+
+### Step 4: ブランチ作成
 
 issue のラベル・内容に基づきブランチを作成する。
 
@@ -66,9 +82,10 @@ git checkout -b <prefix>/<issue-number>-<description>
 
 ブランチ名の `<description>` は issue タイトルから kebab-case で生成する（英語、30 文字以内）。
 
-### Step 4: スペック駆動設計（大規模のみ）
+### Step 5: スペック駆動設計（大規模のみ）
 
-issue の内容を入力として、以下を順に実行する。
+issue の内容と Step 3 で取得したプロジェクトスペックを入力として、以下を順に実行する。
+特に `docs/architecture.md` のレイヤー設計・DI 戦略・ナビゲーション設計に準拠すること。
 
 1. **要件定義書の作成**（requirements-gen 相当）
    - issue の本文を要件のベースとして活用する
@@ -84,7 +101,7 @@ issue の内容を入力として、以下を順に実行する。
    - `docs/features/<feature-name>/TASKS.md` に出力
    - **ユーザー承認を待つ**
 
-### Step 5: 実装
+### Step 6: 実装
 
 #### 小規模の場合
 
@@ -102,7 +119,7 @@ TASKS.md のタスクを順番に実装する（implement-feature の Step 6 と
 4. タスクを完了に更新する
 5. 次の未完了タスクへ進む
 
-### Step 6: テスト（大規模のみ）
+### Step 7: テスト（大規模のみ）
 
 全タスク完了後、以下を確認する。
 
@@ -110,7 +127,7 @@ TASKS.md のタスクを順番に実装する（implement-feature の Step 6 と
 2. ユニットテストの実行
 3. REQUIREMENTS.md の受け入れ条件との照合
 
-### Step 7: コミット・PR 作成
+### Step 8: コミット・PR 作成
 
 ```bash
 # 変更をコミット（Conventional Commits 形式）
