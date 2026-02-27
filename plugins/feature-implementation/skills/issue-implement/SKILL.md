@@ -61,26 +61,22 @@ issue の内容から実装規模を判断する。
 
 存在しないファイルはスキップする（警告は出さない）。
 
-### Step 4: ブランチ作成
+### Step 4: ワークツリー作成
 
-issue のラベル・内容に基づきブランチを作成する。
+issue のラベル・内容に基づき、**ワークツリーを作成して隔離された環境で作業する**。
 
-```bash
-# main を最新に更新
-git checkout main && git pull
-
-# ブランチ作成
-git checkout -b <prefix>/<issue-number>-<description>
-```
+ワークツリー名は `<prefix>/<issue-number>-<description>` 形式で生成する。
 
 | ラベル / 種別 | プレフィックス |
 |---|---|
 | bug | `fix/` |
-| feature / enhancement | `feature/` |
+| feature / enhancement | `feat/` |
 | refactor | `refactor/` |
-| その他 | `feature/` |
+| その他 | `feat/` |
 
-ブランチ名の `<description>` は issue タイトルから kebab-case で生成する（英語、30 文字以内）。
+`<description>` は issue タイトルから kebab-case で生成する（英語、30 文字以内）。
+
+ユーザーに「ワークツリーを作成します」と伝え、EnterWorktree ツールでワークツリーを作成する。
 
 ### Step 5: スペック駆動設計（大規模のみ）
 
