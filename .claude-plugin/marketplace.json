@@ -9,6 +9,14 @@
   },
   "plugins": [
     {
+      "name": "spec-driven-dev",
+      "description": "スペック駆動開発ワークフロー — PRD・機能設計・アーキテクチャ・リポジトリ構造・開発ガイドライン・用語集を段階的に生成する",
+      "version": "0.1.0",
+      "source": "./plugins/spec-driven-dev",
+      "category": "workflow",
+      "tags": ["ios", "swift", "spec-driven", "prd", "architecture", "design", "workflow", "documentation"]
+    },
+    {
       "name": "ios-architecture",
       "description": "MVVM 構造チェック・レイヤー依存検査・DI 提案",
       "version": "0.1.0",
