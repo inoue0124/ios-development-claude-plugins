@@ -1,6 +1,6 @@
 ---
 name: issue-implement
-description: GitHub issue 番号を指定して、ブランチ作成・実装・PR 作成を一気通貫で実行する。issue の規模を自動判断し、小規模は直接実装、大規模はスペック駆動で実装する。「issue 実装」「issue 対応」「issue-implement」で起動。
+description: GitHub issue 番号を指定して、ワークツリー作成・実装・PR 作成を一気通貫で実行する。issue の規模を自動判断し、小規模は直接実装、大規模はスペック駆動で実装する。「issue 実装」「issue 対応」「issue-implement」で起動。
 disable-model-invocation: true
 argument-hint: "<issue-number>"
 ---
@@ -9,7 +9,7 @@ argument-hint: "<issue-number>"
 
 > このスキルは `/issue-implement <issue-number>` で明示的に実行します。Git 操作・GitHub PR 作成の副作用があるため、自動活性化されません。
 
-GitHub issue の内容を読み取り、ブランチ作成 → 実装 → PR 作成までを行う。
+GitHub issue の内容を読み取り、ワークツリー作成 → 実装 → PR 作成までを行う。
 issue の規模に応じてスペック駆動（大規模）または直接実装（小規模）を自動判断する。
 
 ## ツール使用方針
@@ -61,26 +61,22 @@ issue の内容から実装規模を判断する。
 
 存在しないファイルはスキップする（警告は出さない）。
 
-### Step 4: ブランチ作成
+### Step 4: ワークツリー作成
 
-issue のラベル・内容に基づきブランチを作成する。
+issue のラベル・内容に基づき、**ワークツリーを作成して隔離された環境で作業する**。
 
-```bash
-# main を最新に更新
-git checkout main && git pull
-
-# ブランチ作成
-git checkout -b <prefix>/<issue-number>-<description>
-```
+ワークツリー名は `<prefix>/<issue-number>-<description>` 形式で生成する。
 
 | ラベル / 種別 | プレフィックス |
 |---|---|
 | bug | `fix/` |
-| feature / enhancement | `feature/` |
+| feature / enhancement | `feat/` |
 | refactor | `refactor/` |
-| その他 | `feature/` |
+| その他 | `feat/` |
 
-ブランチ名の `<description>` は issue タイトルから kebab-case で生成する（英語、30 文字以内）。
+`<description>` は issue タイトルから kebab-case で生成する（英語、30 文字以内）。
+
+ユーザーに「ワークツリーを作成します」と伝え、EnterWorktree ツールでワークツリーを作成する。
 
 ### Step 5: スペック駆動設計（大規模のみ）
 
