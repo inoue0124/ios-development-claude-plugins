@@ -1,12 +1,13 @@
 ---
-name: spec-driven-workflow
-description: スペック駆動開発の一気通貫ワークフロー。prd-writing・functional-design・architecture-design・repository-structure・development-guidelines・glossary-gen を順番に実行する
+name: init-project-spec
+description: プロジェクト初期スペックの一括生成ワークフロー。prd-writing・functional-design・architecture-design・repository-structure・development-guidelines・glossary-gen を順番に実行し docs/ にプロジェクトスペック一式を生成する。初回のみ使用する
 disable-model-invocation: true
 ---
 
-# スペック駆動開発ワークフロー
+# プロジェクトスペック初期化
 
-> このスキルは `/spec-driven-workflow` で明示的に実行します。自動活性化されません。
+> このスキルは `/init-project-spec` で明示的に実行します。自動活性化されません。
+> プロジェクト立ち上げ時に一度だけ使用します。以降のフィーチャー実装は `/implement-feature` を使用してください。
 
 6 つの atomic スキルを順番に実行し、`docs/` 配下にプロジェクトスペック一式を生成する。
 Step 1（PRD）のみユーザー承認を挟み、Step 2〜6 は前ステップの出力を入力として自動的に生成する。

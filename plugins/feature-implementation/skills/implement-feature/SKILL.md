@@ -31,7 +31,24 @@ codebase-scanner サブエージェントを組み合わせて実行する。
 | 概要・背景 | 必須 | - |
 | 参考情報（画面デザイン、API 仕様等） | 任意 | なし |
 
-### Step 2: プロジェクト分析（subagent）
+### Step 2: プロジェクトスペック参照 + プロジェクト分析
+
+#### 2-1. プロジェクトスペックの読み取り
+
+`docs/` 配下にプロジェクトスペック（`/init-project-spec` で生成）が存在する場合、以下を読み取り設計の前提情報として活用する。
+
+| ファイル | 参照内容 |
+|---|---|
+| `docs/product-requirements.md` | ユーザーストーリー・機能要件・非機能要件 |
+| `docs/functional-design.md` | 画面一覧・データモデル・API 仕様 |
+| `docs/architecture.md` | レイヤー設計・DI 戦略・ナビゲーション設計・テスト戦略 |
+| `docs/repository-structure.md` | ディレクトリ構成・ファイル命名規則 |
+| `docs/development-guidelines.md` | 実装パターン・禁止パターン・コーディング規約 |
+| `docs/glossary.md` | ドメイン用語 → コード命名のマッピング |
+
+存在しないファイルはスキップする（警告は出さない）。
+
+#### 2-2. プロジェクト分析（subagent）
 
 codebase-scanner サブエージェントを起動し、既存プロジェクトの構造を把握する。
 
@@ -54,7 +71,8 @@ docs/features/<feature-name>/REQUIREMENTS.md
 ### Step 4: 詳細設計書の作成
 
 design-gen スキルに基づき DESIGN.md を生成する。
-Step 2 のプロジェクト分析結果を反映し、既存コードとの整合性を確保する。
+Step 2 のプロジェクトスペックとプロジェクト分析結果を反映し、既存コードとの整合性を確保する。
+特に `docs/architecture.md` のレイヤー設計・DI 戦略・ナビゲーション設計に準拠すること。
 
 ```
 docs/features/<feature-name>/DESIGN.md
