@@ -89,6 +89,29 @@ iOS チーム開発を包括的にサポートする Claude Code プラグイン
 | Docker | xcodeproj-mcp-server の実行 | 推奨 |
 | xcrun altool | TestFlight アップロード | ios-distribution 利用時 |
 
+## スケーリング方針
+
+本プラグインストアは **1人〜少人数チームでの Claude Code による開発** を主な対象としている。
+
+### 現在の想定
+
+- リリースフロー（`/testflight-upload`, `/release`）はローカル実行
+- 署名・認証情報はローカルの `.env` や Keychain で管理
+- CI/CD のセットアップコストを省き、機能開発に集中する
+
+### チームが拡大した場合
+
+各スキルの SKILL.md に定義されたフローは、そのまま CI/CD ワークフローの設計書として活用できる。
+
+| 現在（Claude Code スキル） | 将来（CI/CD） |
+|---|---|
+| `/testflight-upload` | GitHub Actions + Fastlane `beta` lane |
+| `/release` | GitHub Actions + tag push trigger |
+| `.env` の認証情報 | GitHub Secrets |
+| ローカル署名 | Fastlane Match |
+
+スキルの仕様を変更する際は、将来の CI/CD 移行を意識して **フローを明文化・ステップを分離** しておくことを推奨する。
+
 ## ライセンス
 
 MIT

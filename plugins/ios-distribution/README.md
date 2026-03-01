@@ -1,6 +1,6 @@
-# ios-distribution — TestFlight 配信・署名
+# ios-distribution — TestFlight 配信・署名・リリース管理
 
-アーカイブビルドから TestFlight アップロードまでの配信フローを自動化する。
+アーカイブビルド・TestFlight アップロード・リリース管理の配信フローを自動化する。
 
 ## スキル一覧
 
@@ -8,7 +8,17 @@
 |---|---|---|
 | skill | signing-check | 署名・プロビジョニング確認 |
 | skill (manual) | build-archive | IPA 生成 |
-| skill (manual) | testflight-upload | archive + upload（xcodebuild + xcrun altool） |
+| skill (manual) | testflight-upload | ビルド番号更新 + archive + upload + コミット |
+| skill (manual) | release | Git タグ + GitHub Release + App Store リリースノート生成 |
+
+## リリースフロー
+
+```
+開発完了 → /testflight-upload → QA テスト → 審査提出 → 審査合格 → /release
+```
+
+- `/testflight-upload`: ビルド番号更新・アーカイブ・TestFlight アップロード・コミット
+- `/release`: リリースノート生成・Git タグ・GitHub Release 作成（ビルドしない）
 
 ## subagent
 

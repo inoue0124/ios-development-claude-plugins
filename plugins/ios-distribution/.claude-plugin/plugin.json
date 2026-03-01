@@ -1,7 +1,7 @@
 {
   "name": "ios-distribution",
   "version": "0.1.0",
-  "description": "アーカイブビルドから TestFlight アップロードまでの配信フローを自動化する",
+  "description": "アーカイブビルド・TestFlight アップロード・リリース管理の配信フローを自動化する",
   "skills": "./skills/",
   "agents": [
     "./agents/archive-runner.md"
